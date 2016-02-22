@@ -1,10 +1,5 @@
 /*
-You are given two 32-bit numbers, N and M, 
-and two bit positions, i and j. 
-Write a method to set all bits between i 
-and j in N equal to M (e.g., M becomes a 
-substring of N located at i and starting 
-at j).
+by: Harpreet Bhatia
 */
 
 #include<iostream>
@@ -29,7 +24,7 @@ void printBinary(int n){
     cout<<'\n';
 }
 
-int insertBit(int N, int M, int i, int j){
+unsigned int insertBit(int N, int M, int i, int j) {
     int allOnes = ~0;
     int left = allOnes << (j+1);
     int right = (1<<i)-1;
@@ -39,12 +34,12 @@ int insertBit(int N, int M, int i, int j){
     return shifted | clr;
 }
 
-int main(){
+int main() {
     int N, M, i, j;
     N = 1<<10;      //10000000000
-    M = 19;         //10011
-    i=2;
-    j=6;
+    M = 21;         //10101
+    i=0;
+    j=5;
     printBinary(N);
     printBinary(M);
     int res = insertBit(N, M, i, j);

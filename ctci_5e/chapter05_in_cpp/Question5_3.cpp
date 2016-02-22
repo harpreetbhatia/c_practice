@@ -1,3 +1,7 @@
+/*
+by: Harpreet Bhatia
+*/
+
 #include<iostream>
 #include<climits>
 #include<cmath>
@@ -25,15 +29,15 @@ void printBinary(int n){
 void next_smallest(int n){
 	int len = 0;
 	int tmp = n;
-	int res;
+	int result;
 	while(len<31){
 		if((tmp&1) == 0){
 			tmp >>= 1;
 			len++;
 			if(tmp&1 == 1){
 				//10 occured
-				res = n - (1<<len) + (1<<(len-1)); 
-				printBinary(res);
+				result = n - (1<<len) + (1<<(len-1)); 
+				printBinary(result);
 				return;
 			}
 		}
@@ -49,31 +53,40 @@ void next_smallest(int n){
 void next_largest(int n){
 	int len = 0;
 	int tmp = n;
-	int res;
-	while(len<31){
-		if(tmp&1 == 1){
+	int result;
+	cout << "len= " << len << endl;
+	cout << "tmp= " << tmp << endl;
+	while (len < 31) {
+		// check for 01
+		if (tmp & 1 == 1) {
 			tmp >>= 1;
 			len++;
-			if((tmp&1) == 0){
+			cout << "len= " << len << endl;
+			if ((tmp & 1) == 0){
 				//01 occured
-				res = n + (1<<len) - (1<<(len-1));
-				printBinary(res);
+				cout << "1<<len= ";
+				printBinary(1<<len);
+				cout << "1<<(len-1)= ";
+				printBinary(1<<(len-1));
+				result = n + (1<<len) - (1<<(len-1));
+				printBinary(result);
 				return;
 			}
 		}
 		else{
-			tmp >>=1;
+			tmp >>= 1;
 			len++;
 		}
 	}
-	cout<<INT_MAX;
+	cout << INT_MAX;
 }
 
 int main(){
-	int a = (1<<31)+(1<<29);
-	cout<<a<<'\n';
+	int a = (1<<31)+(1<<29); //10100000000000000000000000000000
+	a = 2;
+	cout << a << '\n';
 	printBinary(a);
-	next_smallest(a);
+	//next_smallest(a);
 	next_largest(a);
     return 0;
 }

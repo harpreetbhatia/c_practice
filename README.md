@@ -2,7 +2,7 @@
 Practice exercises for C, C++
 
 ### Material from the following sources:
-* www.github.com/careercup/ctci (Cracking the Coding Interview, 5th Edition)
+* www.github.com/careercup/ctci
 * www.lynda.com
 
 ### Compiled & checked at the following sites:
@@ -10,5 +10,7 @@ Practice exercises for C, C++
 
 ### Resources to help understand concepts:
 * www.mycodeschool.com
-* Sams Teach Yourself C++ in One Hour a Day
+* Cracking the Coding Interview- GL McDowell
+* Sams Teach Yourself C++ in 24 Hours - J Liberty
+* Advanced Programming Techniques- R Barzee
 * www.visualgo.net
